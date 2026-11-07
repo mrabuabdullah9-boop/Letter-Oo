@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Interactive Grade 1 English lesson: Letter Oo." name="description"/><title>Letter Oo | Grade 1 English — Mr. Khalil Mohammed</title><style>
+:root{
+ --green:#167653;--green-dark:#10543c;--gold:#c6a34c;--ink:#1d2a25;
+ --muted:#5e6b65;--line:#d8e1dc;--paper:#fff;--bg:#f2f6f3;
+ --soft-green:#eaf5ef;--soft-gold:#fbf6e8;--red:#b42318;--soft-red:#fff0ef;
+ --blue:#255a8c;--soft-blue:#eef5fb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+.page{max-width:1160px;margin:22px auto;padding:0 18px 42px}
+.sheet-header,.panel,.toolbar,.result-panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 18px rgba(22,65,45,.06)}
+.sheet-header{padding:23px 26px 19px;border-top:6px solid var(--green);position:relative;background:linear-gradient(180deg,#ffffff 0%,#fbfdfb 100%)}
+.brand-row{display:grid;grid-template-columns:1fr minmax(300px,1.5fr) 82px;align-items:center;gap:18px}
+.school-info{font-family:Georgia,'Times New Roman',serif;color:var(--green);font-weight:bold;font-size:13px;line-height:1.45}
+.school-info .school-name{font-size:17px;color:var(--green-dark)}
+.title-panel{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.kicker{display:block;font-size:12px;letter-spacing:2px;color:var(--muted);font-weight:900;text-transform:uppercase;line-height:1.5}
+h1{display:block;font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,3.5vw,42px);letter-spacing:.4px;margin:5px 0 0;color:#263a31;line-height:1.15}
+.prepared{display:block;font-size:15px;color:var(--green-dark);font-weight:800;position:static;transform:none;white-space:normal;text-align:center;margin:9px auto 0;letter-spacing:.25px}
+.school-logo{display:block;width:78px;height:72px;object-fit:contain;justify-self:end}
+.student-line{display:flex;flex-wrap:wrap;gap:11px;align-items:center;margin-top:17px;padding-top:14px;border-top:1px solid var(--line)}
+.student-line label{font-weight:800;font-size:14px}
+input[type=text],select,textarea{font:inherit;color:var(--ink);background:#fff;border:1px solid #bccbc2;border-radius:8px;padding:9px 11px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(22,118,83,.12)}
+#studentName{flex:1;min-width:190px;max-width:430px}
+.grade-pill{margin-left:auto;background:var(--soft-gold);border:1px solid #ead9a7;color:#705716;padding:6px 13px;border-radius:999px;font-weight:800;font-size:13px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:12px 14px;margin:14px 0;position:sticky;top:8px;z-index:10}
+.toolbar .hint{font-size:12px;color:var(--muted);margin-right:auto}
+button{border:0;border-radius:9px;padding:10px 15px;font-weight:800;font-size:13px;cursor:pointer;transition:transform .15s ease,filter .15s ease}
+button:hover{filter:brightness(.97);transform:translateY(-1px)}
+button:focus-visible{outline:3px solid #9ccdb5;outline-offset:2px}
+.primary{background:var(--green);color:#fff}.secondary{background:var(--soft-green);color:var(--green-dark);border:1px solid #c5dfd0}.plain{background:#f4f6f5;color:#31443a;border:1px solid var(--line)}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0 18px}
+.nav a{display:inline-block;color:var(--green-dark);background:#fff;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;padding:7px 12px}
+.nav a:hover{border-color:var(--green);background:var(--soft-green)}
+.panel{padding:21px 23px;margin:16px 0;scroll-margin-top:88px}
+.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:22px;margin:0;color:#20382d;line-height:1.25}
+.section-sub{font-size:13px;color:var(--muted);margin-top:4px}
+.score-box{display:flex;align-items:stretch;white-space:nowrap;border:1px solid #353535;border-radius:5px;overflow:hidden;font-size:12px;flex-shrink:0}
+.score-box .label{background:#242424;color:#fff;font-weight:bold;padding:4px 9px}
+.score-box .points{background:#fff;min-width:34px;text-align:center;padding:4px 8px;font-weight:bold}
+.score-box .max{background:#e8ebea;border-left:1px solid #aaa;padding:4px 8px}
+.hero-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:stretch}
+.intro-card{background:linear-gradient(135deg,#fbf6e8,#f4f8f5);border:1px solid #e6d7a9;border-radius:13px;padding:18px}
+.eyebrow{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#806b2c;font-weight:900}
+.intro-card h2{font-size:25px;margin:5px 0 8px}
+.intro-card p{margin:0;color:#46564d;font-size:15px}
+.learning-points{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.learning-point{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px;display:flex;gap:10px;align-items:center}
+.learning-point .symbol{width:40px;height:40px;border-radius:11px;background:var(--soft-green);display:grid;place-items:center;font-size:21px;flex-shrink:0}
+.learning-point strong{display:block;color:var(--green-dark);font-size:14px}
+.learning-point small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.vocab-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.vocab-card{border:1px solid var(--line);border-radius:13px;background:linear-gradient(180deg,#fff,#fbfcfb);padding:14px 12px;text-align:center;min-width:0}
+.vocab-icon{width:58px;height:58px;border-radius:16px;background:var(--soft-gold);display:grid;place-items:center;margin:0 auto 8px;font-size:29px}
+.vocab-card h3{font-size:16px;color:var(--green-dark);margin:0 0 4px}
+.vocab-card p{font-size:12px;color:var(--muted);margin:0;min-height:36px}
+.audio{margin-top:9px;background:var(--soft-blue);color:var(--blue);border:1px solid #d2e3f1;border-radius:999px;padding:6px 11px;font-size:12px}
+.grammar-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grammar-card{border:1px solid var(--line);border-radius:13px;padding:16px;background:#fff}
+.grammar-card.have{border-top:4px solid var(--green)}
+.grammar-card.has{border-top:4px solid var(--gold)}
+.grammar-card h3{margin:0 0 7px;font-family:Georgia,serif;font-size:22px;color:var(--green-dark)}
+.grammar-card p{margin:4px 0;font-size:14px}
+.example{margin-top:10px;background:#f7faf8;border-radius:9px;padding:10px 12px;font-weight:700;color:#31483a;font-size:14px}
+.example b{color:var(--green)}
+.rule-note{background:var(--soft-gold);border:1px dashed #c6a34c;border-radius:10px;padding:11px 14px;margin-top:13px;font-size:13px;color:#66551f}
+.activity-list{display:grid;gap:12px}
+.question{border:1px solid var(--line);border-radius:11px;padding:13px 15px;background:#fff}
+.question p{font-weight:700;margin:0 0 9px;font-size:15px}
+.options{display:flex;gap:8px;flex-wrap:wrap}
+.option{display:inline-flex;align-items:center;gap:6px;border:1px solid #cbd8d0;border-radius:8px;padding:7px 10px;font-size:14px;font-weight:600;cursor:pointer;background:#fff}
+.option input{accent-color:var(--green)}
+.feedback{font-size:12px;font-weight:800;margin-top:7px;min-height:16px}
+.correct{border-color:#2d8a56!important;background:#f0faf3!important}
+.incorrect{border-color:#c63c33!important;background:#fff5f4!important}
+.good{color:var(--green-dark)}.bad{color:var(--red)}
+.completion{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.completion-item{border:1px solid var(--line);border-radius:10px;padding:12px}
+.completion-item label{display:block;font-weight:700;font-size:14px;margin-bottom:7px}
+.completion-item input{width:100%}
+.homework-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.homework-card{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fff}
+.homework-card .task-no{font-size:11px;font-weight:900;color:#8a702c;letter-spacing:1px}
+.homework-card h3{font-family:Georgia,serif;color:var(--green-dark);margin:5px 0;font-size:18px}
+.homework-card p{font-size:13px;color:#526159;margin:0 0 10px}
+.homework-card textarea{width:100%;min-height:88px;resize:vertical;font-size:13px}
+.result-panel{padding:18px 20px;margin:16px 0;display:flex;gap:16px;align-items:center}
+.result-panel .copy{flex:1}
+.result-panel h2{font-size:20px}
+.result-panel p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.total-score{font-size:28px;font-weight:900;color:var(--green-dark);white-space:nowrap}
+.star-reward{display:flex;justify-content:center;align-items:center;gap:clamp(5px,1.5vw,12px);font-size:clamp(42px,8vw,62px);line-height:1.25;margin:12px auto 5px;filter:drop-shadow(0 5px 7px rgba(255,177,0,.22));isolation:isolate}
+.star-reward .reward-star{display:inline-block;transform-origin:center;animation:star-pop .65s cubic-bezier(.2,1.7,.4,1) both,star-glow 2s ease-in-out infinite alternate}
+.star-reward .reward-star:nth-child(2){animation-delay:.08s,.2s}.star-reward .reward-star:nth-child(3){animation-delay:.16s,.4s}.star-reward .reward-star:nth-child(4){animation-delay:.24s,.6s}.star-reward .reward-star:nth-child(5){animation-delay:.32s,.8s}
+.star-reward .earned:nth-child(5n+1){color:#ffbf00;text-shadow:0 0 5px #fff2a6,0 0 16px #ffc400,0 3px 0 #d88700}
+.star-reward .earned:nth-child(5n+2){color:#ff7b35;text-shadow:0 0 6px #ffe0b5,0 0 15px #ff9b42,0 3px 0 #d95c28}
+.star-reward .earned:nth-child(5n+3){color:#ff5da8;text-shadow:0 0 6px #ffd4ec,0 0 16px #ff7dbb,0 3px 0 #d83c83}
+.star-reward .earned:nth-child(5n+4){color:#36bff2;text-shadow:0 0 6px #d6f7ff,0 0 16px #48caff,0 3px 0 #1686c5}
+.star-reward .earned:nth-child(5n){color:#9b78ff;text-shadow:0 0 6px #e4d9ff,0 0 16px #a88aff,0 3px 0 #7050d2}
+.star-reward .waiting{color:#d9e2f2;text-shadow:0 2px 0 #b7c5d8;opacity:.8}
+@keyframes star-pop{from{opacity:0;transform:scale(.25) rotate(-25deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes star-glow{from{filter:brightness(1)}to{filter:brightness(1.18) drop-shadow(0 0 5px rgba(255,220,90,.6))}}
+@media(prefers-reduced-motion:reduce){.star-reward .reward-star{animation:none}}
+.star-caption{font-weight:900;color:#8a6500;font-size:16px;margin:0 0 8px}
+.progress{height:9px;background:#e4ece7;border-radius:99px;overflow:hidden;margin-top:11px}
+.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--green),#91c7a6);transition:width .25s}
+.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
+@media(max-width:760px){
+ .page{padding:0 9px 25px;margin:10px auto}.sheet-header{padding:14px}.brand-row{grid-template-columns:1fr 58px;gap:10px}.school-logo{grid-column:2;grid-row:1;width:56px;height:56px}.school-info{font-size:11px}.school-info .school-name{font-size:14px}.title-panel{grid-column:1/-1;grid-row:2}.prepared{position:static;transform:none;white-space:normal;margin:7px auto 0}h1{font-size:25px}.toolbar{position:static}.toolbar .hint{flex-basis:100%}.panel{padding:15px 12px}.hero-strip,.grammar-grid{grid-template-columns:1fr}.vocab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.homework-grid{grid-template-columns:1fr}.section-head{align-items:flex-start}
+}
+@media(max-width:430px){.learning-points{grid-template-columns:1fr}.completion{grid-template-columns:1fr}.student-line .grade-pill{margin-left:0}.total-score{font-size:23px}}
+@media print{
+ body{background:#fff}.page{max-width:none;margin:0;padding:0}.toolbar,.nav,.no-print,.audio{display:none!important}.sheet-header,.panel,.result-panel{box-shadow:none;border-radius:0;break-inside:avoid;margin:0 0 10px}.panel{padding:12px}.homework-card,.question,.vocab-card{break-inside:avoid}
+}
+
+/* Premium visual hierarchy — accessibility and classroom readability */
+:root{
+ --ink:#172b23; --muted:#4b5e54; --line:#cbd9d1;
+ --green:#126b4a; --green-dark:#0c5037;
+}
+body{font-size:17px;line-height:1.68;background:#edf3ef}
+.page{max-width:1160px;padding-left:18px;padding-right:18px}
+.sheet-header{padding:30px 32px 24px;border-top-width:8px;border-radius:20px;box-shadow:0 10px 30px rgba(19,69,47,.10)}
+.brand-row{grid-template-columns:1fr minmax(360px,1.7fr) 92px;gap:22px}
+.school-info{font-size:15px;line-height:1.55}
+.school-info .school-name{font-size:19px}
+.school-logo{width:88px;height:82px}
+.kicker{font-size:15px;letter-spacing:2.3px;font-weight:900;color:#52675c}
+h1{font-size:clamp(38px,4.4vw,54px);font-weight:800;letter-spacing:.2px;margin-top:8px;color:#183c2c}
+.prepared{font-size:19px;font-weight:800;margin-top:12px}
+.student-line{margin-top:22px;padding-top:18px;gap:14px}
+.student-line label{font-size:17px}
+input[type=text],select,textarea{font-size:17px;padding:12px 14px}
+.grade-pill{font-size:15px;padding:8px 16px}
+.toolbar{padding:15px 18px;gap:12px;border-radius:14px}
+.toolbar .hint{font-size:14px}
+button{font-size:15px;padding:12px 18px}
+.nav{gap:10px;margin:16px 0 22px}
+.nav a{font-size:14px;padding:9px 15px}
+.panel{padding:28px 30px;margin:22px 0;border-radius:18px;box-shadow:0 7px 22px rgba(22,65,45,.07)}
+.section-head{padding-bottom:17px;margin-bottom:22px;gap:18px}
+h2{font-size:29px;line-height:1.25}
+.section-sub{font-size:16px;line-height:1.55;margin-top:7px}
+.score-box{font-size:14px}
+.score-box .label,.score-box .points,.score-box .max{padding:7px 11px}
+.hero-strip{gap:20px}
+.intro-card{padding:24px;border-radius:16px}
+.eyebrow{font-size:13px}
+.intro-card h2{font-size:30px}
+.intro-card p{font-size:18px;line-height:1.65}
+.learning-points{gap:13px}
+.learning-point{padding:16px;gap:13px}
+.learning-point .symbol{width:48px;height:48px;font-size:25px}
+.learning-point strong{font-size:17px}
+.learning-point small{font-size:14px}
+.vocab-grid{gap:16px}
+.vocab-card{padding:18px 15px;border-radius:15px}
+.vocab-icon{width:68px;height:68px;font-size:34px}
+.vocab-card h3{font-size:20px;margin-bottom:7px}
+.vocab-card p{font-size:15px;line-height:1.55;min-height:46px}
+.audio{font-size:14px;padding:8px 14px}
+.grammar-grid{gap:18px}
+.grammar-card{padding:21px;border-radius:15px}
+.grammar-card h3{font-size:27px}
+.grammar-card p,.example{font-size:17px;line-height:1.65}
+.example{padding:13px 15px}
+.rule-note{font-size:16px;line-height:1.65;padding:15px 18px}
+.activity-list{gap:17px}
+.question{padding:20px 22px;border-radius:14px;border-left:5px solid var(--green);box-shadow:0 3px 12px rgba(24,60,42,.045)}
+.question p{font-size:21px;font-weight:800;line-height:1.5;margin:0 0 15px;color:#183c2c}
+.options{gap:11px}
+.option{font-size:17px;font-weight:600;padding:11px 15px;border-radius:10px;line-height:1.45}
+.option input{width:18px;height:18px;margin:0 2px 0 0}
+.feedback{font-size:15px;margin-top:12px;min-height:20px}
+.progress{height:12px;margin-top:18px}
+#progressText{font-size:15px}
+.completion{gap:16px}
+.completion-item{padding:17px}
+.completion-item label{font-size:17px}
+.result-panel{padding:24px 28px;border-radius:17px;box-shadow:0 7px 22px rgba(22,65,45,.07)}
+.result-panel h2{font-size:26px}
+.result-panel p{font-size:16px}
+.total-score{font-size:36px}
+.footer{font-size:14px;line-height:1.7;margin-top:24px}
+@media(max-width:760px){
+ .page{padding:0 10px 28px}.sheet-header{padding:18px}.brand-row{grid-template-columns:1fr 58px;gap:10px}.school-info{font-size:12px}.school-info .school-name{font-size:15px}.school-logo{width:56px;height:56px}.title-panel{grid-column:1/-1;grid-row:2}.kicker{font-size:12px;letter-spacing:1.5px}h1{font-size:34px}.prepared{font-size:16px;margin-top:8px}.panel{padding:21px 15px;margin:16px 0}.section-head{margin-bottom:17px}h2{font-size:24px}.section-sub{font-size:14px}.intro-card h2{font-size:26px}.intro-card p{font-size:16px}.vocab-card h3{font-size:18px}.vocab-card p{font-size:14px}.grammar-card h3{font-size:24px}.grammar-card p,.example{font-size:16px}.question{padding:17px 15px}.question p{font-size:19px}.option{font-size:16px;padding:10px 12px}.result-panel{padding:18px 16px}.result-panel h2{font-size:22px}.total-score{font-size:29px}
+}
+@media(max-width:430px){.question p{font-size:18px}.option{font-size:15px}.learning-point strong{font-size:16px}.completion-item label{font-size:16px}}
+@media print{body{font-size:15px}.panel{box-shadow:none;padding:18px}.question p{font-size:17px}.option{font-size:14px}.section-sub{font-size:13px}}
+
+
+.vocab-illustration{display:block;width:100%;height:154px;object-fit:cover;border-radius:12px;margin:0 auto 13px;background:#edf6fb;box-shadow:0 5px 14px rgba(24,73,104,.12);border:1px solid #dce9ef}
+.vocab-card{overflow:hidden}
+@media(max-width:650px){.vocab-illustration{height:138px}}
+@media print{.vocab-illustration{height:132px;box-shadow:none}}
+
+/* Final typography refinement: balanced lesson title */
+h1{
+  font-size:clamp(30px,3.5vw,43px) !important;
+  line-height:1.16;
+}
+@media (max-width:700px){
+  h1{font-size:28px !important}
+}
+@media (max-width:480px){
+  h1{font-size:26px !important}
+}
+
+
+.letter-match-board{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:560px;margin:14px auto 4px}.letter-match-column{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#f8fbf9}.match-heading{text-align:center;font-size:13px;font-weight:900;letter-spacing:.7px;color:var(--green-dark);padding:7px}.match-letter,.letter-match-column .choice{min-height:58px;display:flex;align-items:center;justify-content:center;font:900 32px Georgia,serif;border:1px solid #cbd9d0;border-radius:10px;background:#fff;color:#20382d}.match-letter.muted{color:#87958c;background:#f1f4f2}.letter-match-column .choice{cursor:pointer}.letter-match-column .choice.selected{border:2px solid var(--green);background:#eaf5ef}.letter-match-column .choice.correct{border:2px solid #167653;background:#e5f5eb}.letter-match-column .choice.wrong{border:2px solid #b42318;background:#fff0ef}@media(max-width:480px){.letter-match-board{gap:9px}.letter-match-column{padding:8px}.match-letter,.letter-match-column .choice{min-height:52px;font-size:29px}}\n.letter-hero{display:grid;grid-template-columns:1fr 1fr;gap:18px}.letter-display{border-radius:16px;background:linear-gradient(135deg,#eaf5ef,#fbf6e8);border:1px solid #d9e6dc;padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:250px}.letter-pair{font:900 clamp(100px,14vw,154px) Georgia,serif;line-height:1;color:#176d50;text-shadow:0 4px 0 #c5d9ca,0 8px 16px #1c49331c}.letter-caption{font-size:15px;color:#52645a;font-weight:800;letter-spacing:1px;margin-top:12px}.sound-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;justify-content:center;gap:12px}.sound-big{font-size:40px;font-weight:900;color:#20382d}.word-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.word-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:12px;text-align:center}.word-art{width:100%;height:155px;display:block;border-radius:11px;background:#f3f8f5}.word-card h3{font-size:20px;margin:10px 0 1px;color:var(--green-dark)}.word-card p{margin:0;color:var(--muted);font-size:13px}.activity-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.task{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}.task h3{margin:0 0 8px;color:var(--green-dark);font-size:17px}.task p{margin:0 0 12px;color:var(--muted);font-size:14px}.task strong{font-weight:1000}.choice-row{display:flex;flex-wrap:wrap;gap:9px}.choice{background:#f7faf8;border:1px solid #cbd9d0;border-radius:10px;padding:10px 16px;font-weight:900;font-size:20px;color:#20382d;cursor:pointer}.choice.selected{border:2px solid var(--green);background:#eaf5ef}.choice.correct{border:2px solid #167653;background:#e5f5eb}.choice.wrong{border:2px solid #b42318;background:#fff0ef}.feedback{font-weight:800;font-size:13px;margin-top:9px;min-height:20px}.feedback.good{color:#167653}.feedback.bad{color:#b42318}.trace-board{background:#fbfcfb;border:2px dashed #b8c9bd;border-radius:12px;padding:12px;display:flex;align-items:center;justify-content:center;gap:28px;min-height:116px}.trace-letter{font:900 70px Georgia,serif;color:#c5d2c9}.trace-letter.small{font-size:58px}.score-strip{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#f5f8f6;border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-top:14px}.listen-word{margin-top:9px;background:var(--soft-blue);color:#255a8c;border:1px solid #d2e3f1;border-radius:999px;padding:7px 12px;font-size:12px}@media(max-width:760px){.letter-hero,.activity-grid{grid-template-columns:1fr}.word-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media print{.no-print,.toolbar,.nav,.listen-word,.audio{display:none!important}.page{max-width:none;margin:0;padding:0}.panel,.sheet-header{box-shadow:none;break-inside:avoid}}
+
+/* Matching activity: two columns with connecting circles */
+.match-instructions{max-width:650px;margin:8px auto 12px;text-align:center;color:var(--muted);font-size:14px}
+.letter-match-board{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,8vw,90px);max-width:654px;padding-left:34px;margin:14px auto 8px}
+.letter-match-column{display:flex;flex-direction:column;gap:12px;padding:12px;border:1px solid var(--line);border-radius:15px;background:#f8fbf9;position:relative;z-index:1}
+.match-heading{text-align:center;font-size:13px;font-weight:900;letter-spacing:.6px;color:var(--green-dark);padding:7px}
+.match-item{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:5px 12px;border:1px solid #cbd9d0;border-radius:12px;background:#fff;color:#20382d;cursor:pointer}
+.match-item .match-number{position:absolute;left:-29px;top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:22px;height:24px;color:#526b5b;font:900 14px Arial,sans-serif;background:transparent}.match-item .match-letter{font:900 31px Georgia,serif;flex:1;text-align:center}
+.match-dot{width:19px;height:19px;flex:0 0 19px;border:2px solid #789486;border-radius:50%;background:#fff;position:relative;z-index:3}
+.match-item.pending{border:2px solid #b78b32;background:#fff9e9}
+.match-item.matched{border:2px solid #167653;background:#e5f5eb;cursor:default}
+.match-item.matched .match-dot{background:#167653;border-color:#167653;box-shadow:inset 0 0 0 4px #fff}
+.match-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:2}
+.match-lines line{stroke:#23835d;stroke-width:3.5;stroke-linecap:round}
+@media(max-width:480px){.letter-match-board{gap:10px;padding-left:27px}.letter-match-column{padding:7px;gap:10px}.match-item{padding:4px 7px;min-height:54px}.match-item .match-letter{font-size:28px}.match-item .match-number{left:-24px;width:18px;height:22px;font-size:12px}.match-dot{width:16px;height:16px;flex-basis:16px}}
+/* Circle the letter: correct choices colour when tapped */
+.circle-letter-task{max-width:700px;margin:10px auto 0;padding:16px;border:1px solid var(--line);border-radius:15px;background:#fbfcfa}
+.circle-letter-prompt{text-align:center;color:var(--green-dark);font-weight:700;margin-bottom:14px}
+.circle-letter-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.circle-choice{min-height:58px;border:2px solid #d3dfd7;border-radius:14px;background:#fff;color:#263c31;font:900 29px Georgia,serif;cursor:pointer;transition:background .18s,border-color .18s,transform .18s}
+.circle-choice:active{transform:scale(.96)}
+.circle-choice.coloured{background:#dff3e5;border:3px solid #218456;color:#12633e;box-shadow:inset 0 0 0 3px #fff}
+.circle-choice.incorrect-tap{animation:letterNudge .22s ease}
+@keyframes letterNudge{0%,100%{transform:translateX(0)}30%{transform:translateX(-3px)}70%{transform:translateX(3px)}}
+@media(max-width:480px){.circle-letter-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.circle-choice{min-height:52px;font-size:26px}}
+
+/* Premium gold activity marker and matching numbers */
+.activity-title-wrap{display:flex;align-items:center;gap:15px}
+.activity-number-badge{position:relative;isolation:isolate;display:grid;place-items:center;flex:0 0 62px;width:62px;height:62px;border-radius:17px;background:linear-gradient(145deg,#fff4cf 0%,#d9b45d 34%,#a97824 68%,#f7e3a0 100%);box-shadow:0 7px 16px rgba(126,91,28,.22),inset 0 1px 1px rgba(255,255,255,.95),inset 0 -2px 4px rgba(92,58,9,.28);transform:rotate(-3deg)}
+.activity-number-badge:before{content:"";position:absolute;inset:4px;border:1px solid rgba(255,255,255,.78);border-radius:13px;box-shadow:inset 0 0 0 1px rgba(126,83,17,.2);z-index:-1}
+.activity-number-badge:after{content:"✦";position:absolute;right:-5px;top:-7px;color:#c49a45;font-size:16px;text-shadow:0 1px 2px rgba(92,58,9,.25)}
+.activity-number-badge span{font:900 24px Georgia,'Times New Roman',serif;letter-spacing:-1px;color:#593d12;text-shadow:0 1px 0 rgba(255,255,255,.8);transform:rotate(3deg)}
+#matching .section-head{padding-bottom:15px;border-bottom:1px solid #e4d5ae}
+#matching .section-head h2{color:#263c31}
+#matching .match-item .match-number{width:25px;height:25px;left:-34px;border-radius:50%;border:1px solid #d5b66d;background:linear-gradient(145deg,#fff8df,#e8d19a);color:#73521d;font:900 13px Georgia,serif;box-shadow:0 2px 5px rgba(106,78,29,.16),inset 0 1px 0 rgba(255,255,255,.9)}
+@media(max-width:480px){.activity-title-wrap{gap:11px}.activity-number-badge{flex-basis:52px;width:52px;height:52px;border-radius:14px}.activity-number-badge span{font-size:21px}#matching .match-item .match-number{left:-27px;width:21px;height:21px;font-size:11px}}
+
+
+
+/* Consistent activity headings: the gold treatment belongs to the number only */
+.section-head .activity-heading{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  width:fit-content;max-width:100%;margin:0;
+  padding:0;background:none;border:0;border-radius:0;box-shadow:none;
+  color:#20382d;font-family:Georgia,'Times New Roman',serif;
+  font-size:29px;line-height:1.25;font-weight:700;text-shadow:none;
+}
+.section-head .activity-heading::after{content:none}
+.activity-title{display:inline;color:#20382d}
+.activity-number-badge{
+  position:relative;isolation:isolate;display:inline-grid;place-items:center;
+  flex:0 0 52px;width:52px;height:52px;border-radius:15px;
+  background:linear-gradient(145deg,#fff9df 0%,#f0d78e 30%,#c69a3f 68%,#f9e9b7 100%);
+  border:1px solid #bd9138;
+  box-shadow:0 5px 13px rgba(126,91,28,.22),inset 0 1px 2px rgba(255,255,255,.98),inset 0 -2px 4px rgba(92,58,9,.22);
+  transform:rotate(-2deg);
+}
+.activity-number-badge:before{content:"";position:absolute;inset:4px;border:1px solid rgba(255,255,255,.85);border-radius:11px;z-index:-1}
+.activity-number-badge:after{content:"✦";position:absolute;right:-5px;top:-7px;color:#a87925;font-size:14px;text-shadow:0 1px 2px rgba(92,58,9,.25)}
+.activity-number-badge span{font:900 24px Georgia,'Times New Roman',serif;letter-spacing:0;color:#593d12;text-shadow:0 1px 0 rgba(255,255,255,.9);transform:rotate(2deg)}
+#matching .section-head{padding-bottom:15px;border-bottom:1px solid #e4d5ae}
+#matching .section-head .activity-heading{color:#20382d}
+@media(max-width:760px){.section-head .activity-heading{font-size:24px;gap:11px}}
+@media(max-width:480px){.section-head .activity-heading{font-size:20px;gap:10px}.activity-number-badge{flex-basis:43px;width:43px;height:43px;border-radius:12px}.activity-number-badge span{font-size:21px}}
+
+/* Larger, more separated premium numbers on the left of the matching column */
+.letter-match-board{padding-left:64px;max-width:684px}
+#matching .match-item .match-number{
+  left:-52px;
+  width:36px;
+  height:36px;
+  border:2px solid #c49a43;
+  border-radius:50%;
+  background:radial-gradient(circle at 32% 25%,#fffdf4 0%,#f8e8bd 34%,#d6ad52 72%,#b17e25 100%);
+  color:#50350d;
+  font:900 20px Georgia,'Times New Roman',serif;
+  text-shadow:0 1px 0 rgba(255,255,255,.9);
+  box-shadow:0 5px 11px rgba(105,72,18,.24),inset 0 2px 3px rgba(255,255,255,.95),inset 0 -2px 3px rgba(93,60,10,.2);
+}
+#matching .match-item .match-number::after{
+  content:"";
+  position:absolute;
+  inset:3px;
+  border:1px solid rgba(255,255,255,.82);
+  border-radius:50%;
+  pointer-events:none;
+}
+@media(max-width:480px){
+  .letter-match-board{padding-left:55px;gap:10px}
+  #matching .match-item .match-number{left:-45px;width:31px;height:31px;font-size:17px}
+}
+
+
+/* Dotted letter tracing with touch and mouse support */
+.trace-instruction{text-align:center;font-weight:700;color:var(--muted);margin:0 0 12px}
+.trace-canvas-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.trace-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px;text-align:center}
+.trace-card h3{margin:0 0 8px;color:var(--green-dark);font-size:18px}
+.trace-canvas{display:block;width:100%;height:190px;border:2px dashed #c7d5cc;border-radius:10px;background:repeating-linear-gradient(to bottom,#fff 0,#fff 61px,#e5ece7 62px,#fff 63px);touch-action:none;cursor:crosshair}
+.trace-clear{margin-top:9px}
+@media(max-width:600px){.trace-canvas-grid{grid-template-columns:1fr}.trace-canvas{height:170px}}
+</style><style>/* Matching circles sit to the left of each letter without covering it. */
+#matching .match-item{justify-content:center;padding-left:42px;padding-right:12px}
+#matching .match-dot{position:absolute;left:11px;right:auto;top:50%;transform:translateY(-50%);z-index:3}
+#matching .match-item .match-letter{flex:1;text-align:center}
+@media(max-width:480px){#matching .match-item{padding-left:34px;padding-right:7px}#matching .match-dot{left:8px}}
+/* Match controls: capital-letter circles on the right, small-letter circles on the left. */
+#matching .capital-match .match-dot{left:auto;right:11px}
+#matching .small-match .match-dot{left:11px;right:auto}
+@media(max-width:480px){#matching .capital-match .match-dot{left:auto;right:8px}#matching .small-match .match-dot{left:8px;right:auto}}
+</style></head><body><div class="page"><header class="sheet-header" id="top"><div class="brand-row"><div class="school-info"><div class="school-name">Al-Bayariq Private Schools</div><div>Educational Supervision Department</div><div>Primary Section</div></div><div class="title-panel"><div class="kicker">Interactive English Practice · Grade 1</div><h1>Letter Oo</h1><div class="prepared">Prepared by <strong>Mr. Khalil Mohammed</strong></div></div><img alt="Al-Bayariq Private Schools logo" class="school-logo" src="data:image/png;base64,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"/></div><div class="student-line"><label for="studentName">Student's Name:</label><input id="studentName" placeholder="Write your name" type="text"/><span class="grade-pill">Grade 1 · First Primary</span></div></header>
+<div class="toolbar no-print"><span class="hint">Look · Listen · Say · Practise</span><button class="primary" id="checkAll">Check All Answers</button><button class="secondary" id="resetAll">Start Again</button><button class="plain" id="printPage">Print Lesson</button></div><nav class="nav no-print"><a href="#discover">Discover Mm</a><a href="#words">Mm Words</a><a href="#sound">Sound Practice</a><a href="#activities">Let's Practise</a><a href="#matching">Match Letters</a><a href="#circle-letter">Circle the Letter</a><a href="#writing">Write Mm</a></nav>
+<section class="panel" id="discover"><div class="section-head"><h2 class="activity-heading"><span aria-label="Activity 1" class="activity-number-badge"><span>1</span></span><span class="activity-title">Discover the Letter</span></h2></div><div class="letter-hero"><div class="letter-display"><div class="letter-pair">O o</div><div class="letter-caption">CAPITAL O · SMALL o</div></div></div></section>
+<section class="panel" id="words"><div class="section-head"><h2 class="activity-heading"><span aria-label="Activity 2" class="activity-number-badge"><span>2</span></span><span class="activity-title">Meet the Oo Words</span></h2></div><div class="word-grid"><article class="word-card"><svg aria-label="A clear friendly ostrich with a long neck, small head, fluffy body and long legs" class="word-art" role="img" viewbox="0 0 320 190"><rect fill="#eef5fb" height="190" rx="12" width="320"></rect><ellipse cx="151" cy="164" fill="#dfe8e3" rx="76" ry="8"></ellipse><path d="M143 119 Q137 88 145 66 Q149 53 160 47 L166 61 Q155 70 158 91 L169 125" fill="#e9e2d7" stroke="#8a8176" stroke-linecap="round" stroke-width="4"></path><ellipse cx="157" cy="131" fill="#514b49" rx="49" ry="34" stroke="#393635" stroke-width="4"></ellipse><path d="M121 119 Q93 107 91 132 Q103 151 132 151 M177 118 Q207 106 218 129 Q205 150 180 151" fill="#6d6460" stroke="#393635" stroke-width="3"></path><path d="M147 52 Q140 31 153 21 Q168 13 178 27 L174 45 Q166 55 147 52Z" fill="#514b49" stroke="#393635" stroke-width="3"></path><circle cx="164" cy="31" fill="#fff" r="3.5"></circle><circle cx="165" cy="31" fill="#263b46" r="1.8"></circle><path d="M175 38 L198 44 L176 49Z" fill="#e6a52d" stroke="#b87a16" stroke-width="2"></path><path d="M140 157 L136 181 M174 157 L180 181" stroke="#e6a52d" stroke-linecap="round" stroke-width="6"></path><path d="M126 182 L145 182 M171 182 L190 182" stroke="#b87a16" stroke-linecap="round" stroke-width="4"></path></svg><h3>Ostrich</h3><p>/ˈɒstrɪtʃ/ – ostrich</p><button class="listen-word" onclick="speak('Ostrich')" type="button">🔊 Listen to the word</button></article><article class="word-card"><svg aria-label="A bright orange fruit with a green leaf" class="word-art" role="img" viewbox="0 0 320 190"><rect fill="#fff7e8" height="190" rx="12" width="320"></rect><ellipse cx="160" cy="164" fill="#eadfc9" rx="75" ry="9"></ellipse><circle cx="160" cy="103" fill="#f28a18" r="62" stroke="#d66b0b" stroke-width="4"></circle><path d="M158 43 Q155 27 164 19" fill="none" stroke="#6c8d42" stroke-linecap="round" stroke-width="7"></path><path d="M163 30 Q205 5 220 35 Q194 57 163 30Z" fill="#70a84c" stroke="#4e8135" stroke-width="3"></path><g fill="#ffb347" opacity=".9"><circle cx="125" cy="78" r="3"></circle><circle cx="190" cy="72" r="3"></circle><circle cx="202" cy="117" r="3"></circle><circle cx="139" cy="139" r="3"></circle><circle cx="110" cy="112" r="3"></circle></g></svg><h3>Orange</h3><p>/ɒ/ – orange</p><button class="listen-word" onclick="speak('Orange')" type="button">🔊 Listen to the word</button></article><article class="word-card"><svg aria-label="A friendly purple octopus with eight curling arms" class="word-art" role="img" viewbox="0 0 320 190"><rect fill="#eaf6fb" height="190" rx="12" width="320"></rect><path d="M160 103 Q113 120 106 159 Q103 176 122 174 Q138 172 140 151 Q147 137 160 139 Q173 140 179 157 Q186 178 203 171 Q218 164 204 145 Q197 130 183 120" fill="none" stroke="#9b63c7" stroke-linecap="round" stroke-width="15"></path><path d="M143 111 Q101 107 82 139 Q72 154 88 161 Q102 165 111 145 Q122 131 143 135M177 111 Q219 107 238 139 Q248 154 232 161 Q218 165 209 145 Q198 131 177 135" fill="none" stroke="#9b63c7" stroke-linecap="round" stroke-width="15"></path><path d="M160 25 C115 25 104 59 112 91 Q119 125 160 128 Q201 125 208 91 C216 59 205 25 160 25Z" fill="#b47bd7" stroke="#8050a8" stroke-width="4"></path><circle cx="143" cy="79" fill="#263b46" r="6"></circle><circle cx="177" cy="79" fill="#263b46" r="6"></circle><path d="M148 98 Q160 108 172 98" fill="none" stroke="#704080" stroke-linecap="round" stroke-width="4"></path><g fill="#fff"><circle cx="124" cy="151" r="3"></circle><circle cx="195" cy="153" r="3"></circle></g></svg><h3>Octopus</h3><p>/ɒ/ – octopus</p><button class="listen-word" onclick="speak('Octopus')" type="button">🔊 Listen to the word</button></article><article class="word-card"><svg aria-label="A whole golden onion with papery skin and green stem" class="word-art" role="img" viewbox="0 0 320 190"><rect fill="#f7f3e9" height="190" rx="12" width="320"></rect><ellipse cx="160" cy="164" fill="#e4ddcf" rx="66" ry="9"></ellipse><path d="M160 48 Q145 31 151 17 Q162 27 164 43 Q177 25 190 23 Q188 42 169 54" fill="#6f9c4d" stroke="#4e7838" stroke-width="3"></path><path d="M160 48 C130 59 99 81 99 119 Q100 158 160 163 Q220 158 221 119 C221 81 190 59 160 48Z" fill="#d8a64b" stroke="#a9782e" stroke-width="4"></path><path d="M160 58 Q132 93 133 137 M160 58 Q188 93 187 137 M160 57 Q150 105 160 158" fill="none" opacity=".9" stroke="#f0cf83" stroke-width="4"></path><path d="M111 128 Q160 148 209 128" fill="none" opacity=".55" stroke="#b98536" stroke-width="2"></path></svg><h3>Onion</h3><p>/ʌ/ – onion</p><button class="listen-word" onclick="speak('Onion')" type="button">🔊 Listen to the word</button></article></div></section><section class="panel" id="sound"><div class="section-head"><h2 class="activity-heading"><span aria-label="Activity 3" class="activity-number-badge"><span>3</span></span><span class="activity-title">Find the First Sound</span></h2></div><div class="activity-grid"><div class="task" data-answer="yes"><h3>1. Does “<strong>octopus</strong>” begin with /ɒ/?</h3><p>Choose your answer.</p><div class="choice-row"><button class="choice" data-value="yes">Yes</button><button class="choice" data-value="no">No</button></div><div class="feedback"></div></div><div class="task" data-answer="no"><h3>2. Does “<strong>sun</strong>” begin with /ɒ/?</h3><p>Choose your answer.</p><div class="choice-row"><button class="choice" data-value="yes">Yes</button><button class="choice" data-value="no">No</button></div><div class="feedback"></div></div></div><div class="score-strip"><strong>First Sound score</strong><span id="soundScoreText">0 / 2 points</span></div></section>
+<section class="panel" id="activities"><div class="section-head"><h2 class="activity-heading"><span aria-label="Activity 4" class="activity-number-badge"><span>4</span></span><span class="activity-title">Let's Practise</span></h2></div><div class="activity-grid"><div class="task" data-answer="O"><h3>1. Find the capital letter.</h3><p>Which one is <strong>capital</strong> O?</p><div class="choice-row"><button class="choice" data-value="o" type="button">o</button><button class="choice" data-value="O" type="button">O</button><button class="choice" data-value="M" type="button">M</button></div><div class="feedback"></div></div><div class="task" data-answer="o"><h3>2. Find the small letter.</h3><p>Which one is <strong>small</strong> o?</p><div class="choice-row"><button class="choice" data-value="O" type="button">O</button><button class="choice" data-value="g" type="button">g</button><button class="choice" data-value="o" type="button">o</button></div><div class="feedback"></div></div><div class="task" data-answer="Ostrich"><h3>3. Which word begins with O?</h3><p>Choose the correct word.</p><div class="choice-row"><button class="choice" data-value="Sun" type="button">Sun</button><button class="choice" data-value="Ostrich" type="button">Ostrich</button><button class="choice" data-value="Cat" type="button">Cat</button></div><div class="feedback"></div></div><div class="task" data-answer="Orange"><h3>4. Which word begins with O?</h3><p>Choose the correct word.</p><div class="choice-row"><button class="choice" data-value="Dog" type="button">Dog</button><button class="choice" data-value="Orange" type="button">Orange</button><button class="choice" data-value="Apple" type="button">Apple</button></div><div class="feedback"></div></div></div><div class="score-strip"><strong>Practice score</strong><span id="scoreText">0 / 4 points</span></div></section>
+<section class="panel" id="matching">
+<div class="section-head"><h2 class="activity-heading"><span aria-label="Activity 5" class="activity-number-badge"><span>5</span></span><span class="activity-title">Match the Capital and Small Letters</span></h2></div>
+<div class="match-instructions">Choose a circle beside a capital letter, then choose the circle beside its matching small letter.</div><div class="score-strip"><strong>Match score</strong><span id="matchScoreText">0 / 3 points</span></div>
+<div aria-label="Connect capital letters to small letters" class="letter-match-board" id="letterMatchBoard">
+<svg aria-hidden="true" class="match-lines" id="matchLines"></svg>
+<div class="letter-match-column">
+<div class="match-heading">CAPITAL LETTERS</div>
+<button class="match-item capital-match" data-match="M" type="button"><span class="match-number">1</span><span class="match-letter">M</span><span aria-hidden="true" class="match-dot"></span></button><button class="match-item capital-match" data-match="O" type="button"><span class="match-number">2</span><span class="match-letter">O</span><span aria-hidden="true" class="match-dot"></span></button><button class="match-item capital-match" data-match="A" type="button"><span class="match-number">3</span><span class="match-letter">A</span><span aria-hidden="true" class="match-dot"></span></button></div>
+<div class="letter-match-column">
+<div class="match-heading">SMALL LETTERS</div>
+<button class="match-item small-match" data-match="O" type="button"><span class="match-letter">o</span><span aria-hidden="true" class="match-dot"></span></button><button class="match-item small-match" data-match="M" type="button"><span class="match-letter">m</span><span aria-hidden="true" class="match-dot"></span></button><button class="match-item small-match" data-match="A" type="button"><span class="match-letter">a</span><span aria-hidden="true" class="match-dot"></span></button></div>
+</div>
+<div aria-live="polite" class="feedback" id="matchFeedback"></div>
+</section>
+<section class="panel" id="circle-letter">
+<div class="section-head"><h2 class="activity-heading"><span aria-label="Activity 6" class="activity-number-badge"><span>6</span></span><span class="activity-title">Circle the Letter</span></h2></div>
+<div class="circle-letter-task">
+<div class="score-strip"><strong>Circle score</strong><span id="circleScoreText">0 / 5 points</span></div>
+<div class="circle-letter-prompt">Circle all the <strong>O</strong> and <strong>o</strong> letters</div>
+<div aria-label="Click all capital O and small o letters" class="circle-letter-grid" id="circleLetterGrid"><button class="circle-choice" data-correct="true" type="button">O</button><button class="circle-choice" type="button">a</button><button class="circle-choice" data-correct="true" type="button">o</button><button class="circle-choice" type="button">A</button><button class="circle-choice" type="button">s</button><button class="circle-choice" data-correct="true" type="button">o</button><button class="circle-choice" type="button">M</button><button class="circle-choice" data-correct="true" type="button">O</button><button class="circle-choice" type="button">a</button><button class="circle-choice" type="button">A</button><button class="circle-choice" data-correct="true" type="button">o</button><button class="circle-choice" type="button">b</button></div>
+<div aria-live="polite" class="feedback" id="circleFeedback">Tap the correct letters to colour them.</div>
+</div>
+</section>
+<section class="panel" id="writing"><div class="section-head"><h2 class="activity-heading"><span aria-label="Activity 7" class="activity-number-badge"><span>7</span></span><span class="activity-title">Trace and Write</span></h2></div><p class="trace-instruction">Trace the dotted letters with your finger or mouse. Follow the dots slowly.</p><div class="trace-canvas-grid"><div class="trace-card"><h3>Capital O</h3><canvas aria-label="Trace capital O" class="trace-canvas" id="traceCapital"></canvas><button class="plain trace-clear" data-canvas="traceCapital" type="button">Clear</button></div><div class="trace-card"><h3>Small o</h3><canvas aria-label="Trace small o" class="trace-canvas" id="traceSmall"></canvas><button class="plain trace-clear" data-canvas="traceSmall" type="button">Clear</button></div></div><div class="task" style="margin-top:14px"><h3>8. Write the letters.</h3><p>Write capital O and small o in the box.</p><input id="writeM" maxlength="8" placeholder="O o" style="width:100%;max-width:260px;font-size:20px;font-weight:800" type="text"/><div class="feedback" id="writeFeedback"></div></div><div class="score-strip"><strong>Write score</strong><span id="writeScoreText">0 / 2 points</span></div><div class="score-strip"><span><strong>Remember:</strong> O is the capital letter. o is the small letter.</span></div></section><footer class="panel" id="finalResult" style="text-align:center"><div class="eyebrow">YOUR FINAL RESULT</div><h2 style="margin-top:5px">Great job, <span id="finalStudentName">Super Student</span>!</h2><div aria-label="0 stars" class="star-reward" id="finalStars" role="img">☆☆☆☆☆</div><p class="star-caption" id="starCaption">You can earn 5 stars!</p><div class="total-score" id="finalTotalScore" style="margin:12px auto">0 / 16</div><p id="finalEncouragement" style="color:var(--green-dark);font-weight:900;font-size:18px;margin:8px 0">You can do it! Keep learning!</p><p style="color:var(--muted);margin-bottom:0">You learned Letter Oo. Keep practising the letter O and its sounds!</p></footer></div><script>
+
+// Dotted tracing boards: works with a mouse, stylus, or finger.
+function setupTraceCanvas(id, letter){
+ const canvas=document.getElementById(id); if(!canvas)return;
+ const ctx=canvas.getContext('2d'); let drawing=false, last=null;
+ function paintGuide(){
+  const r=canvas.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+  canvas.width=Math.round(r.width*dpr); canvas.height=Math.round(r.height*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,r.width,r.height);
+  ctx.save(); ctx.font=(letter==='M'?'900 142px Georgia':'900 132px Georgia');
+  ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineWidth=3;ctx.strokeStyle='#a9b9ae';
+  ctx.setLineDash([2,8]);ctx.lineCap='round';ctx.strokeText(letter,r.width/2,r.height/2-3);ctx.restore();
+
+ }
+ function point(e){const r=canvas.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top}}
+ canvas.addEventListener('pointerdown',e=>{drawing=true;last=point(e);canvas.setPointerCapture(e.pointerId);ctx.beginPath();ctx.arc(last.x,last.y,2.5,0,Math.PI*2);ctx.fillStyle='#167653';ctx.fill()});
+ canvas.addEventListener('pointermove',e=>{if(!drawing)return;const p=point(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.strokeStyle='#167653';ctx.lineWidth=5;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();last=p});
+ const stop=()=>{drawing=false;last=null};canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('lostpointercapture',stop);
+ document.querySelector('[data-canvas="'+id+'"]').addEventListener('click',paintGuide);
+ paintGuide();return paintGuide;
+}
+const redrawCapital=setupTraceCanvas('traceCapital','O');
+const redrawSmall=setupTraceCanvas('traceSmall','o');
+window.addEventListener('resize',()=>{if(redrawCapital)redrawCapital();if(redrawSmall)redrawSmall()});
+
+function speak(t){if(!('speechSynthesis'in window)){alert('Audio is not supported in this browser.');return;}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=.82;u.pitch=1.05;let v=speechSynthesis.getVoices();u.voice=v.find(x=>/^en-US/i.test(x.lang))||v.find(x=>/^en/i.test(x.lang))||null;speechSynthesis.speak(u)}
+const tasks=[...document.querySelectorAll('#activities .task[data-answer]')];
+const soundTasks=[...document.querySelectorAll('#sound .task[data-answer]')];
+const allQuestionTasks=[...soundTasks,...tasks];
+let matchedPairs=new Set();
+function score(){
+ // Scoring: First Sound 2 + Let's Practise 4 + Matching 3 + Circle 5 + Write 2 = 16.
+ const countCorrect = list => list.filter(t=>{const b=t.querySelector('.choice.selected');return !!b && b.dataset.value===t.dataset.answer}).length;
+ const soundCorrect=countCorrect(soundTasks);
+ const practiceCorrect=countCorrect(tasks);
+ const matchingCorrect=matchedPairs.size;
+ const circleCorrect=correctCircleChoices.filter(x=>x.classList.contains('coloured')).length;
+ const enteredLetters=(document.getElementById('writeM').value||'').replace(/\s/g,'');
+ const writeCorrect=(enteredLetters==='Oo')?2:0;
+ const total=soundCorrect+practiceCorrect+matchingCorrect+circleCorrect+writeCorrect;
+ document.getElementById('soundScoreText').textContent=soundCorrect+' / 2 points';
+ document.getElementById('scoreText').textContent=practiceCorrect+' / 4 points';
+ document.getElementById('matchScoreText').textContent=matchingCorrect+' / 3 points';
+ document.getElementById('circleScoreText').textContent=circleCorrect+' / 5 points';
+ document.getElementById('writeScoreText').textContent=writeCorrect+' / 2 points';
+ const entered=(document.getElementById('studentName').value||'').trim();
+ document.getElementById('finalStudentName').textContent=entered||'Super Student';
+ document.getElementById('finalTotalScore').textContent=total+' / 16';
+ const stars=total>=14?5:total>=11?4:total>=8?3:total>=4?2:total>=1?1:0;
+ document.getElementById('finalStars').innerHTML=Array.from({length:5},(_,i)=>'<span class="reward-star '+(i<stars?'earned':'waiting')+'" aria-hidden="true">'+(i<stars?'★':'☆')+'</span>').join('');
+ document.getElementById('finalStars').setAttribute('aria-label',stars+' out of 5 stars');
+ document.getElementById('starCaption').textContent=stars===5?'5 stars! Fantastic!':stars===4?'4 stars! Super work!':stars===3?'3 stars! Well done!':stars===2?'2 stars! Keep going!':stars===1?'1 star! Great start!':'Your stars are waiting! Try the activities!';
+ const encouragement=total===16?'Amazing work! You are a Letter Oo superstar!':total>=12?'Wonderful effort! You are doing great!':total>=8?'Good try! Keep practising and you will shine!':'Every try helps you learn. Keep going, superstar!';
+ document.getElementById('finalEncouragement').textContent=encouragement;
+}
+allQuestionTasks.forEach(t=>t.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>{
+ t.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected','correct','wrong'));
+ b.classList.add('selected');
+ let ok=b.dataset.value===t.dataset.answer;
+ b.classList.add(ok?'correct':'wrong');
+ let f=t.querySelector('.feedback');
+ f.textContent=ok?'Correct! Well done.':'Try again. Look and think carefully.';
+ f.className='feedback '+(ok?'good':'bad');
+ score()
+})));
+
+const matchBoard=document.getElementById('letterMatchBoard');
+const matchFeedback=document.getElementById('matchFeedback');
+const matchSvg=document.getElementById('matchLines');
+let selectedCapital=null;
+// Shuffle both matching columns on each load while keeping each capital/small pair linked.
+function shuffleMatchColumn(selector){
+ const col=matchBoard.querySelector(selector);
+ const items=[...col.querySelectorAll('.match-item')];
+ for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
+ items.forEach(item=>col.appendChild(item));
+}
+shuffleMatchColumn('.letter-match-column:first-of-type');
+shuffleMatchColumn('.letter-match-column:last-of-type');
+function drawMatchLine(cap,small){
+ const boardRect=matchBoard.getBoundingClientRect();
+ const a=cap.querySelector('.match-dot').getBoundingClientRect();
+ const b=small.querySelector('.match-dot').getBoundingClientRect();
+ const x1=a.left+a.width/2-boardRect.left, y1=a.top+a.height/2-boardRect.top;
+ const x2=b.left+b.width/2-boardRect.left, y2=b.top+b.height/2-boardRect.top;
+ const line=document.createElementNS('http://www.w3.org/2000/svg','line');
+ line.setAttribute('x1',x1);line.setAttribute('y1',y1);line.setAttribute('x2',x2);line.setAttribute('y2',y2);
+ matchSvg.appendChild(line);
+}
+matchBoard.querySelectorAll('.capital-match').forEach(cap=>cap.addEventListener('click',()=>{
+ if(cap.classList.contains('matched'))return;
+ matchBoard.querySelectorAll('.capital-match').forEach(x=>x.classList.remove('pending'));
+ selectedCapital=cap;cap.classList.add('pending');
+ matchFeedback.textContent='Now choose the matching small letter.';
+ matchFeedback.className='feedback';
+}));
+matchBoard.querySelectorAll('.small-match').forEach(small=>small.addEventListener('click',()=>{
+ if(small.classList.contains('matched')||!selectedCapital)return;
+ if(selectedCapital.dataset.match===small.dataset.match){
+  const cap=selectedCapital;
+  cap.classList.remove('pending');cap.classList.add('matched');small.classList.add('matched');
+  drawMatchLine(cap,small);matchedPairs.add(cap.dataset.match);selectedCapital=null;
+  matchFeedback.textContent=matchedPairs.size===3?'Excellent! You matched all the letters.':'Correct match! Keep going.';
+  matchFeedback.className='feedback good';score();
+ }else{
+  matchFeedback.textContent='Not a match. Try another small letter.';
+  matchFeedback.className='feedback bad';
+ }
+}));
+window.addEventListener('resize',()=>{
+ if(matchedPairs.size===0)return;
+ matchSvg.innerHTML='';
+ matchBoard.querySelectorAll('.capital-match.matched').forEach(cap=>{
+  const small=matchBoard.querySelector('.small-match[data-match="'+cap.dataset.match+'"]');
+  if(small)drawMatchLine(cap,small);
+ });
+});
+
+const circleGrid=document.getElementById('circleLetterGrid');
+const circleFeedback=document.getElementById('circleFeedback');
+const correctCircleChoices=[...circleGrid.querySelectorAll('[data-correct="true"]')];
+circleGrid.querySelectorAll('.circle-choice').forEach(choice=>choice.addEventListener('click',()=>{
+ if(choice.classList.contains('coloured'))return;
+ if(choice.dataset.correct==='true'){
+  choice.classList.add('coloured');
+  const count=correctCircleChoices.filter(x=>x.classList.contains('coloured')).length;
+  circleFeedback.textContent=count===correctCircleChoices.length?'Wonderful! You found all the O and o letters.':'Correct! Find the remaining O and o letters.';
+  circleFeedback.className='feedback good';
+  score();
+ }else{
+  choice.classList.remove('incorrect-tap');void choice.offsetWidth;choice.classList.add('incorrect-tap');
+  circleFeedback.textContent='Try again. Look for capital O or small o.';
+  circleFeedback.className='feedback bad';
+ }
+}));
+document.getElementById('studentName').addEventListener('input',score);
+document.getElementById('writeM').addEventListener('input',e=>{const x=e.target.value.replace(/\s/g,'');const f=document.getElementById('writeFeedback');if(!x){f.textContent='';f.className='feedback';score();return}const ok=x==='Oo';f.textContent=ok?'Great writing! 2 points earned.':'Try again: write capital O first, then small o.';f.className='feedback '+(ok?'good':'bad');score()});
+document.getElementById('checkAll').onclick=()=>{allQuestionTasks.forEach(t=>{let b=t.querySelector('.choice.selected'),f=t.querySelector('.feedback');if(!b){f.textContent='Choose an answer.';f.className='feedback bad'}else{let ok=b.dataset.value===t.dataset.answer;f.textContent=ok?'Correct! Well done.':'Not quite. Try again.';f.className='feedback '+(ok?'good':'bad')}});let x=document.getElementById('writeM').value.replace(/\s/g,'');let f=document.getElementById('writeFeedback');if(x){let ok=x==='Oo';f.textContent=ok?'Great writing! 2 points earned.':'Check the capital O first and the small o second.';f.className='feedback '+(ok?'good':'bad')}score()};
+document.getElementById('resetAll').onclick=()=>{allQuestionTasks.forEach(t=>{t.querySelectorAll('.choice').forEach(b=>b.classList.remove('selected','correct','wrong'));let f=t.querySelector('.feedback');f.textContent='';f.className='feedback'});matchedPairs.clear();selectedCapital=null;matchBoard.querySelectorAll('.match-item').forEach(x=>x.classList.remove('matched','pending'));matchSvg.innerHTML='';matchFeedback.textContent='';matchFeedback.className='feedback';circleGrid.querySelectorAll('.circle-choice').forEach(x=>x.classList.remove('coloured','incorrect-tap'));circleFeedback.textContent='Tap the correct letters to colour them.';circleFeedback.className='feedback';document.getElementById('writeM').value='';document.getElementById('writeFeedback').textContent='';if(redrawCapital)redrawCapital();if(redrawSmall)redrawSmall();score();window.scrollTo({top:0,behavior:'smooth'})};document.getElementById('printPage').onclick=()=>window.print();
+score();
+</script></body></html>
